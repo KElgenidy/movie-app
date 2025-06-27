@@ -143,9 +143,9 @@ export default function SearchPage() {
                         : "N/A"}
                     </p>
                   </div>
-                  <span>●</span>
+                  <span className={styles.dot}>●</span>
                   <p className={styles.lang}>{movie.original_language}</p>
-                  <span>●</span>
+                  <span className={styles.dot}>●</span>
                   <p className={styles.year}>
                     {movie.release_date
                       ? movie.release_date.split("-")[0]

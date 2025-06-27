@@ -9,7 +9,11 @@ export default function FavoritesPage() {
   const router = useRouter();
 
   if (favorites.length === 0) {
-    return <div style={{ textAlign: "center", marginTop: "2rem" }}>No favorite movies yet.</div>;
+    return (
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        No favorite movies yet.
+      </div>
+    );
   }
 
   return (
@@ -20,7 +24,11 @@ export default function FavoritesPage() {
           <li key={movie.id}>
             <article className={styles.card}>
               <Image
-                src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "/No-Poster.png"}
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                    : "/No-Poster.png"
+                }
                 alt={movie.original_title}
                 width={120}
                 height={180}
@@ -31,9 +39,26 @@ export default function FavoritesPage() {
               />
               <h2 className={styles.title}>{movie.original_title}</h2>
               <div className={styles.content}>
-                <span className={styles.lang}>{movie.original_language}</span>
-                <span className={styles.year}>{movie.release_date ? movie.release_date.split("-")[0] : "N/A"}</span>
-                <span className={styles.rating}>{movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}</span>
+                <div className={styles.rating}>
+                  <Image
+                    src="/star.png"
+                    alt="star-rating"
+                    width={20}
+                    height={20}
+                    className={styles.starRating}
+                  />
+                  <p className={styles.voteAverage}>
+                    {movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
+                  </p>
+                </div>
+                <span className={styles.dot}>●</span>
+                <p className={styles.lang}>{movie.original_language}</p>
+                <span className={styles.dot}>●</span>
+                <p className={styles.year}>
+                  {movie.release_date
+                    ? movie.release_date.split("-")[0]
+                    : "N/A"}
+                </p>
               </div>
               <button
                 type="button"
