@@ -1,0 +1,149 @@
+.search {
+  padding: 50px 20px 40px 20px;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  background-color: #fff;
+  color: #222;
+  font-family: var(--font-geist-sans);
+  overflow-y: auto;
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.searchInput {
+  width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(22, 22, 22, 0.8);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+@media (min-width: 480px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .results {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.poster {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #111;
+  cursor: pointer;
+}
+
+.card {
+  background-color: #222;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 480px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.voteAverage {
+  font-weight: bold;
+}
+
+.lang, .year {
+  font-size: 0.95rem;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.favoriteBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #ffb400;
+  color: #23272f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.favoriteBtn:hover {
+  background: #ff8800;
+}
+
+@media (prefers-color-scheme: dark) {
+  .search {
+    background-color: #222;
+    color: #fff;
+  }
+
+  .card {
+    background-color: #fff;
+    color: #222;
+  }
+
+  .searchInput {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid #444;
+  }
+
+  
+  
+}

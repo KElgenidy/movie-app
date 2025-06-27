@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 10vh;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background-color: #fff; 
+        color: #222;         
+    }
+}
+
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* .nav {
+    display: flex;
+    gap: 1rem;
+} */
+
+.ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+    font-size: 1rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
